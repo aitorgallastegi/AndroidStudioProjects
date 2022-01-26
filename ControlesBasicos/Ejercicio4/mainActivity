@@ -1,0 +1,76 @@
+package com.example.myapplication;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
+public class MainActivity extends AppCompatActivity {
+
+    Button btn1;
+    EditText num1;
+    EditText txt2;
+    TextView txt1;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        btn1 = (Button) findViewById(R.id.btn1);
+        num1 = (EditText) findViewById(R.id.num1);
+        txt2 = (EditText) findViewById(R.id.txt2);
+        txt1 = (TextView) findViewById(R.id.txt1);
+
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int numero;
+                String letra1;
+                String letra2;
+                Map<String, String> map = new HashMap<String, String>()
+                {{
+                    put("0", "T");put("1", "R");put("2", "W");put("3", "A");
+                    put("4", "G");put("5", "M");put("6", "Y");put("7", "F");
+                    put("8", "P");put("9", "D");put("10", "X");put("11", "B");
+                    put("12", "N");put("13", "J");put("14", "Z");put("15", "S");
+                    put("16", "Q");put("17", "V");put("18", "H");put("19", "L");
+                    put("20", "C");put("21", "K");put("22", "E");
+                }};
+
+                numero = Integer.parseInt(num1.getText().toString()) % 23;
+                letra1 = txt2.getText().toString().toUpperCase();
+                letra2 = map.get(String.valueOf(numero));
+                //map.get(String.valueOf(numero));
+                //Toast.makeText(getApplicationContext(), map.get(String.valueOf(numero)), Toast.LENGTH_SHORT).show();
+
+                if (letra1.equals(letra2)){
+                    Toast.makeText(getApplicationContext(), "Letra CORRECTA!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(), "Letra INCORRECTA!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+
+    }
+
+
+}
+

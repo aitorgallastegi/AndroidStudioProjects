@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Controles de Seleccion e Intents</string>
+    <string-array name="lista_paises">
+        <item>España</item>
+        <item>Peru</item>
+        <item>Bolivia</item>
+        <item>Japon</item>
+    </string-array>
+</resources>
