@@ -8,8 +8,8 @@ public class MainActivity extends AppCompatActivity implements LibroListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FragmentListado fragmentListado =
-                (FragmentListado)getSupportFragmentManager().
+
+        FragmentListado fragmentListado =(FragmentListado)getSupportFragmentManager().
                         findFragmentById(R.id.frgListado);
         assert fragmentListado != null;
         fragmentListado.setLibroListener(this);
